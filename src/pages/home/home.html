@@ -1,14 +1,21 @@
 <ion-header>
+
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>Mapa</ion-title>
   </ion-navbar>
+  <ion-searchbar showCancelButton="always" [(ngModel)]="buscarPor" placeholder="Procurar por" (keyup)="buscarEndereco($event)"></ion-searchbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+
+<ion-content>
+
+  <div id="map_canvas">
+  </div>
+
+  <ion-fab right top>
+    <button ion-fab mini color="danger" (click)="userLocation()">
+      <ion-icon name="pin"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>
